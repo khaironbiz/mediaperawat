@@ -1,0 +1,167 @@
+// Main container
+.wide-container {
+	background-color: $white;
+
+	.boxed-container & {
+		max-width: 120rem;
+		margin: 0 auto;
+		box-shadow: 0 0 1rem rgba($black, .05);
+	}
+
+	.fixed-top-bar & {
+		padding-top: 4rem;
+	}
+
+}
+
+.framed-container {
+	@extend .boxed-container;
+	margin: 0 auto;
+
+	@include susy-media(1024px) {
+		margin: 4rem auto;
+	}
+}
+
+.container {
+	@include container;
+	padding: 0 2rem;
+
+	@include susy-media(1280px) {
+		padding: 0;
+	}
+
+	.boxed-container &,
+	.framed-container & {
+		padding: 0 3rem;
+	}
+}
+
+.site-content {
+	margin-top: 3rem;
+}
+
+// Main layout
+.content-area {
+
+	.layout-2c-l & {
+		@include susy-media(900px) {
+			@include span(9 of 12);
+		}
+	}
+
+	.layout-2c-r & {
+		@include susy-media(900px) {
+			@include span(9 of 12 last);
+		}
+	}
+
+	.layout-1c-n & {
+		@include susy-media(900px) {
+			width: span(9 of 12);
+			margin: auto;
+		}
+	}
+
+}
+
+.widget-area {
+
+	.layout-2c-l & {
+		@include susy-media(900px) {
+			@include span(3 of 12 last);
+		}
+	}
+
+	.layout-2c-r & {
+		@include susy-media(900px) {
+			@include span(3 of 12);
+		}
+	}
+
+}
+
+// Post layouts
+.posts {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	/* helper for grid three */
+	&:after {
+		content: "";
+		width: span(3 of 9);
+	}
+
+}
+
+// Default
+.post-layout-default {
+	margin-bottom: 3rem;
+	display: flex;
+	flex-flow: row wrap;
+
+	.thumbnail {
+		margin-bottom: 2rem;
+		@include susy-media (600px) {
+			width: span(4 of 9);
+			margin-right: gutter(9);
+			margin-bottom: 0;
+		}
+	}
+
+	.content {
+		@include susy-media (600px) {
+			width: span(5 of 9);
+		}
+		display: flex;
+		flex-flow: row wrap;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+
+// Grid two columns
+.post-layout-grid-two {
+	@extend %clearfix;
+	margin-bottom: 3rem;
+	@include susy-media(768px) {
+		width: span(4.5 of 9);
+	}
+
+	.thumbnail {
+		margin-bottom: 2rem;
+	}
+}
+
+// Grid three columns
+.post-layout-grid-three {
+	@extend %clearfix;
+	margin-bottom: 3rem;
+
+	@include susy-media(600px) {
+		width: span(4.5 of 9);
+	}
+
+	@include susy-media(900px) {
+		width: span(3 of 9);
+	}
+
+	.thumbnail {
+		margin-bottom: 2rem;
+	}
+}
+
+// Grid four columns
+.post-layout-grid-four {
+	@extend %clearfix;
+
+	@include susy-media(600px) {
+		width: span(6 of 12);
+	}
+
+	@include susy-media(800px) {
+		width: span(3 of 12);
+	}
+}

@@ -1,0 +1,593 @@
+/**
+ * Advertisement
+ */
+.header-ad {
+	justify-content: flex-end;
+}
+
+/**
+ * Random link
+ */
+.random-link {
+	position: absolute;
+	right: 5rem;
+	color: $white;
+	top: 1rem;
+
+	@include susy-media(80rem) {
+		right: 3rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.boxed-container &,
+	.framed-container & {
+		right: 6rem;
+	}
+
+	&:hover,
+	&:visited {
+		color: $white;
+	}
+}
+
+/**
+ * Breadcrumbs
+ */
+.breadcrumbs {
+	background-color: #f5f5f5;
+
+	.trail-items {
+		@extend %reset-list;
+		color: #999;
+		font-size: 1.2rem;
+		padding: .3rem 0;
+
+		li {
+			padding-right: 3rem;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+	}
+
+	li {
+		display: inline-block;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -18px;
+			content: "\203A";
+		}
+
+		&:first-of-type {
+			&::before {
+				content: "";
+			}
+		}
+
+	}
+
+	a {
+		color: #999;
+	}
+}
+
+/**
+ * Block elements
+ */
+.block-title {
+	margin-bottom: 2.5rem;
+	border-bottom: .2rem solid $accent;
+	position: relative;
+
+	span {
+		background-color: $border-color;
+		display: block;
+		color: $heading;
+		padding: 1.2rem 1.3rem;
+		font-size: 1.2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+}
+
+/**
+ * Trending
+ */
+.trending {
+	margin-top: 3rem;
+	margin-bottom: 5rem;
+
+	.trending-title {
+		margin-bottom: 1.5rem;
+		position: relative;
+		padding-right: 3.3rem;
+
+		&::after {
+			content: "";
+			background-image: url(assets/img/trending.svg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			display: inline-block;
+			width: 2.2rem;
+			height: 2.2rem;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: .8rem;
+		}
+	}
+
+	article {
+		margin-bottom: 1rem;
+	}
+
+	.cat-links {
+		font-size: 1rem;
+	}
+
+	.entry-title {
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 2.4rem;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+/**
+ * Post formats icon
+ */
+.format-icon {
+	background-color: $accent;
+	min-width: 3.2rem;
+	min-height: 3.2rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: $white;
+	text-align: center;
+	line-height: 2;
+	font-size: 1.4rem;
+
+	.has-caption & {
+		bottom: 2.6rem;
+	}
+
+	svg {
+		vertical-align: middle;
+	}
+
+	path {
+		fill: $white;
+	}
+}
+
+/**
+ * Posts pagination
+ */
+.pagination {
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+
+	.current {
+		background-color: $accent;
+		color: $white;
+
+		&:visited {
+			color: $white;
+		}
+	}
+
+	.page-numbers {
+		display: inline-block;
+		padding: .5rem;
+		margin-right: -.2rem;
+		min-width: 3.5rem;
+		min-height: 3.4rem;
+		text-align: center;
+		color: $text;
+
+		&.current {
+			color: $white;
+		}
+
+		&:hover {
+			background-color: $accent;
+			color: $white;
+		}
+
+		&:visited {
+			color: $black;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+
+	.next,
+	.prev {
+		overflow: hidden;
+		white-space: nowrap;
+		text-indent: 120%;
+		background-image: url('assets/img/chevron-right.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 3.5rem;
+		height: 3.4rem;
+		vertical-align: bottom;
+
+		&:hover {
+			background-image: url('assets/img/chevron-right-white.svg');
+		}
+	}
+
+	.prev {
+		background-image: url('assets/img/chevron-left.svg');
+
+		&:hover {
+			background-image: url('assets/img/chevron-left-white.svg');
+		}
+	}
+
+	&.traditional-pagination {
+		text-align: inherit;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		.next,
+		.prev {
+			overflow: inherit;
+			white-space: normal;
+			text-indent: inherit;
+			background: none;
+			width: auto;
+			height: auto;
+			vertical-align: baseline;
+
+			a {
+				color: $text;
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+
+		.next {
+			order: 2;
+		}
+
+		.prev {
+			order: 1;
+		}
+	}
+}
+
+/**
+ * Page header
+ */
+.page-header {
+	// border-bottom: .1rem solid #efefef;
+	margin-bottom: 4rem;
+
+	.page-title {
+		margin-top: 0;
+		margin-bottom: 2rem;
+		font-size: 2.4rem;
+		font-weight: 400;
+		border-left: 5px solid $accent;
+		padding-left: 1.5rem;
+		line-height: 1.3;
+
+		span {
+			text-transform: none;
+			font-weight: 700;
+		}
+	}
+}
+
+.taxonomy-description {
+
+	.author & {
+		padding-bottom: 3rem;
+	}
+
+}
+
+/**
+ * Post pagination
+ */
+.post-pagination {
+	@extend %clearfix;
+	margin-top: 5rem;
+	margin-bottom: 6rem;
+	display: flex;
+	flex-flow: row wrap;
+	border-top: 1px solid $border-color;
+	padding-top: 5rem;
+
+	.post-detail {
+		overflow: hidden;
+
+		span {
+			display: inline-block;
+			font-size: 1.2rem;
+			color: $accent;
+			text-transform: uppercase;
+			vertical-align: top;
+		}
+
+		a {
+			color: $text;
+			font-size: 1.8rem;
+			font-weight: 700;
+			display: block;
+			&:hover {
+				color: $accent;
+			}
+		}
+	}
+
+	> div {
+		@extend %clearfix;
+		width: 100%;
+
+		@include susy-media(600px) {
+			width: span(4.5 of 9);
+		}
+	}
+
+	path:nth-child(1) {
+		fill: $accent;
+	}
+}
+
+.prev-post {
+	margin-bottom: 3rem;
+
+	@include susy-media( 569px ) {
+		margin-bottom: 0;
+	}
+}
+
+.next-post {
+	text-align: right;
+}
+
+/**
+ * Author biography
+ */
+.author-bio {
+	background-color: #fafafa;
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+	padding: 3rem 3rem 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin-bottom: 6rem;
+
+	.author-avatar {
+		display: none;
+
+		@include susy-media(600px) {
+			display: block;
+			width: span(1.5 of 9);
+		}
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.description {
+		@include susy-media(600px) {
+			width: span(7.5 of 9);
+		}
+
+		.name {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+
+			a {
+				color: $text;
+
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+
+		.bio {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.author-social-links {
+
+		a {
+			display: inline-block;
+			color: $text;
+			font-size: 1.6rem;
+			margin-right: 1rem;
+		}
+	}
+}
+
+/**
+ * Related Posts
+ */
+.related-posts {
+
+	.related-posts-title {
+		font-size: 2rem;
+		text-transform: uppercase;
+		margin-bottom: 3rem;
+	}
+
+}
+
+/**
+ * Random Posts
+ */
+.random-posts {
+	margin-top: 3rem;
+}
+
+/**
+ * Back to top
+ */
+.back-to-top {
+	position: fixed;
+	bottom: 4rem;
+	right: 4rem;
+	z-index: 9999;
+	width: 3.2rem;
+	height: 3.2rem;
+	text-align: center;
+	line-height: 3rem;
+	background: $accent-secondary;
+	color: $white;
+	cursor: pointer;
+	border: 0;
+	border-radius: .2rem;
+	text-decoration: none;
+	transition: opacity 0.2s ease-out;
+	opacity: 0;
+
+	path:nth-child(2) {
+		transition: opacity 0.2s ease-out;
+		fill: $white;
+	}
+
+	svg {
+		vertical-align: middle;
+	}
+
+	&:visited {
+		color: $white;
+	}
+
+	&:hover {
+		background: #e9ebec;
+		path:nth-child(2) {
+			fill: $black;
+		}
+	}
+
+	&.show {
+		opacity: 1;
+	}
+}
+
+/**
+ * Newsletter
+ */
+.newsletter {
+	background-color: $accent-secondary;
+	padding: 6rem 0;
+	text-align: center;
+
+	&-title {
+		color: $white;
+		font-size: 2.6rem;
+		text-transform: uppercase;
+		margin-bottom: .5rem;
+		margin-top: 0;
+	}
+
+	&-desc {
+		color: $text-secondary;
+		margin-bottom: 3rem;
+	}
+
+	&-form {
+
+		label {
+			display: none;
+		}
+
+		input[type="email"] {
+			background-color: transparent;
+			max-width: 100%;
+			margin-right: .5rem;
+
+			@include susy-media(650px) {
+				min-width: 50rem;
+				margin-bottom: 0;
+			}
+		}
+
+		input[type="submit"] {
+			padding: .9rem 2.5rem 1.3rem;
+		}
+
+	}
+}
+
+/**
+ * Post cover
+ */
+.post-cover {
+	background-color: $accent-secondary;
+	padding: 6rem 0;
+}
+
+/**
+ * Jobs
+ */
+div.job_listings {
+	margin-top: 3rem;
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a, .rp4wp-related-job_listing>ul li.no_job_listings_found a, ul.job_listings li.job_listing a, ul.job_listings li.no_job_listings_found a {
+	width: 100%;
+}
+
+ul.job_listings li.job_listing a div.position .company strong {
+	font-weight: 400;
+	font-size: 1.4rem;
+}
+
+.single-job_listing {
+
+	.job_listing {
+
+		.entry-title {
+			font-size: 3.2rem;
+			margin-top: 0;
+			margin-bottom: 4rem;
+		}
+
+		.single_job_listing .company {
+			min-height: 5em;
+		}
+
+		.post-content {
+			p:first-child {
+				font-weight: 400;
+			}
+		}
+
+	}
+
+}
+
+/**
+ * Contact Form 7
+ */
+.wpcf7-textarea {
+	width: 100%;
+}

@@ -1,0 +1,476 @@
+/**
+ * Primary navigation
+ */
+.main-navigation {
+	background-color: $black;
+
+	.header-light & {
+		background-color: #f5f5f5;
+	}
+
+	.fixed-top-bar & {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 19;
+	}
+
+	.container {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.slicknav_menu {
+		background: transparent;
+		padding: 0;
+	}
+
+}
+
+#primary-menu,
+.secondary-menu-items {
+	flex: 1;
+}
+
+.primary-menu {
+	@extend %reset-list;
+
+	li {
+		position: relative;
+		display: inline-block;
+		margin-right: 2rem;
+
+		&:hover {
+
+			> .sub-menu {
+				visibility: visible;
+				opacity: 1;
+				z-index: 1;
+				transform: translateY(0%);
+				transition-delay: 0s, 0s, 0.3s;
+			}
+
+			> a {
+
+				.header-light & {
+					color: $black;
+					&:visited:hover,
+					&:hover {
+						color: $black;
+						text-decoration: none;
+					}
+				}
+			}
+
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		font-size: 1.2rem;
+		color: $white;
+		display: block;
+		padding: .5rem 0;
+
+		.header-light & {
+			color: $black;
+
+			&:visited:hover,
+			&:hover {
+				color: $accent;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.sub-menu {
+		@extend %reset-list;
+		padding: 1.3rem 0;
+		text-align: left;
+		border-top: 0;
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		transform: translateY(2rem);
+		transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+		min-width: 18rem;
+		background-color: $white;
+		box-shadow: 0 0 0.7rem rgba(0, 0, 0, .1);
+		z-index: 9;
+
+		ul {
+			top: 0;
+			left: 100%;
+		}
+
+		li {
+			display: block;
+			position: relative;
+			border-left: 3px solid transparent;
+			margin-right: 0;
+			padding: 0 2rem;
+
+			&:hover {
+				border-color: $accent;
+			}
+
+			a {
+				&:hover {
+					margin-left: 0.3rem;
+					color: $text;
+					text-decoration: none;
+				}
+			}
+		}
+
+		a {
+			color: $text;
+			transition: all 200ms linear;
+
+			&:hover {
+				margin-left: 0.3rem;
+				color: $text;
+				text-decoration: none;
+			}
+		}
+
+	}
+
+}
+
+/**
+ * Mobile primary navigation
+ */
+.slicknav_menu {
+	display: block;
+	background-color: transparent;
+	padding: 0;
+	flex: 1;
+
+	@include susy-media(800px) {
+		display: none;
+	}
+
+	.slicknav_btn {
+		float: left;
+		background-color: transparent;
+		padding: 0;
+		margin: 1.5rem 0;
+
+		.main-navigation & {
+			@include susy-media(max-width 600px) {
+				margin: 1.1rem 0;
+			}
+		}
+	}
+
+	.slicknav_nav {
+		padding-bottom: 2rem;
+
+		.slicknav_row {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+		a {
+			padding-left: 0;
+			margin-left: 0;
+			color: $white;
+		}
+
+	}
+
+}
+
+.primary-menu,
+.secondary-menu {
+	display: none;
+
+	@include susy-media(800px) {
+		display: block;
+	}
+}
+
+/**
+ * Social menu
+ */
+.social-search {
+	@extend %reset-list;
+	@extend .primary-menu;
+	display: flex;
+	justify-content: flex-end;
+	color: $white;
+	text-align: right;
+	position: absolute;
+	top: 0;
+
+	@include susy-media(768px) {
+		@include span(4 of 12 last);
+		position: relative;
+		top: auto;
+	}
+
+	> li.social-link,
+	> li.search-link {
+		&:hover {
+			> a {
+				color: $white;
+			}
+		}
+	}
+
+	> li.search-link {
+		a {
+			padding: 0;
+			line-height: 0;
+		}
+		path:nth-child(1) {
+			fill: $white;
+
+			.header-light & {
+				fill: $black;
+			}
+		}
+	}
+
+	.sub-menu {
+		left: auto;
+		right: 0;
+		min-width: 14rem;
+	}
+
+	.search-link .sub-menu {
+		min-width: 23.5rem;
+	}
+
+	.sub-menu.search-menu  {
+		li {
+			border-left: 0;
+		}
+	}
+}
+
+.social-menu {
+	padding-left: 0;
+	display: inline-block;
+	margin: 0;
+
+	li {
+		margin-right: 1rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		line-height: 0;
+	}
+
+	.svg-icon {
+		width: 16px;
+	}
+
+	path {
+		fill: $white;
+		.header-light & {
+			fill: $black;
+		}
+	}
+
+}
+
+.search-menu {
+
+	li {
+		&:hover {
+			border-left: 0;
+		}
+	}
+
+	.search-field {
+		width: 150px;
+	}
+
+}
+
+/**
+ * Secondary navigation
+ */
+.secondary-navigation {
+	background-color: $black;
+	.header-light & {
+		background-color: #f5f5f5;
+		border-bottom: .1rem solid $border-color;
+	}
+
+	.container {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.slicknav_menu {
+		background: transparent;
+		padding: 0;
+
+		.slicknav_icon-bar {
+			box-shadow: none;
+		}
+
+	}
+
+	.slicknav_btn {
+		text-shadow: none;
+		// padding-left: 3rem;
+	}
+
+	.slicknav_nav {
+		// padding-left: 3rem;
+	}
+
+	.social-search {
+		top: 1rem;
+		@media (min-width: 768px) {
+			top: auto;
+		}
+	}
+
+}
+
+.secondary-menu {
+	@extend .primary-menu;
+
+	> li {
+		margin-right: 3rem;
+
+		&:hover {
+			&::after {
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 5px solid $white;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				margin: auto;
+			}
+
+			> a {
+				color: $white;
+
+				&:visited:hover,
+				&:hover {
+					color: $white;
+					text-decoration: none;
+				}
+
+				.header-light & {
+					&:visited:hover,
+					&:hover {
+						color: $black;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		> a {
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			padding: 1.2rem 0;
+			font-weight: 700;
+
+			&:visited:hover,
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			}
+
+			.header-light & {
+				&:visited:hover,
+				&:hover {
+					color: $black;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	a {
+		&:visited:hover,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.sub-menu {
+
+		li {
+			&:last-child {
+				a {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		a {
+			font-size: 1.4rem;
+			border-bottom: 1px solid #efefef;
+			padding: .8rem 0;
+		}
+
+	}
+}
+
+.slicknav_menu {
+
+	.slicknav_icon-bar{
+
+		.header-light & {
+			background-color: $accent-secondary;
+			box-shadow: none;
+		}
+	}
+
+	.slicknav_nav {
+		a {
+			.header-light & {
+				color: $accent-secondary;
+				&:hover {
+					color: $accent-secondary;
+				}
+			}
+			&:hover {
+				background-color: transparent;
+				border-radius: 0;
+				color: $white;
+			}
+		}
+	}
+
+}
+
+@keyframes animate_submenu {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

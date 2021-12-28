@@ -1,0 +1,42 @@
+.site-header {
+	background-color: $accent-secondary;
+	.header-light & {
+		background-color: $white;
+	}
+}
+
+.site-header-inner {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 0;
+
+	@include susy-media(800px) {
+		justify-content: space-between;
+	}
+}
+
+.site-branding {
+	margin-bottom: 2rem;
+
+	@include susy-media(800px) {
+		margin-bottom: 0;
+	}
+
+	.site-title {
+
+		a {
+			color: $white;
+			&:hover {
+				color: $accent;
+			}
+
+			.header-light & {
+				color: $black;
+			}
+		}
+
+	}
+
+}

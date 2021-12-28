@@ -1,0 +1,43 @@
+// Import helpers files
+// -------------------------------------------------
+
+// Susy configuration
+@import "plugins/susy";
+$susy: (
+	columns: 12,
+	gutters: 3.0rem/7.0rem,
+	container: 111rem,
+);
+
+// Mixins
+@import "helpers/mixins";
+
+// Typography Variables
+// -------------------------------------------------
+
+// Project base font family
+$lora: 'Lora', serif;
+
+// Basic typography
+$base-font-size:   1.6rem;
+$base-line-height: 2.6rem;
+
+// Color Variables
+// -------------------------------------------------
+
+// Helpers
+$black:            #000 !default;
+$white:            #fff !default;
+
+// Project base color
+$accent:           #2552b7 !default;
+$accent-secondary: #181818 !default;
+$text:             #555 !default;
+$text-secondary:   #bdbdbd !default;
+$heading:          #333333 !default;
+// ===================================
+
+// Base colors
+$border-color:         #efefef !default;
+$selection-bg-color:   $accent !default;
+$selection-font-color: $white !default;

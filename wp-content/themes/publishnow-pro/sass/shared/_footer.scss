@@ -1,0 +1,37 @@
+.site-footer {
+	background-color: $accent-secondary;
+	padding: 6rem 0;
+	color: $text-secondary;
+	position: relative;
+
+	.container {
+		z-index: 1;
+		position: relative;
+	}
+}
+
+.site-info {
+	text-align: center;
+	font-size: 1.4rem;
+
+	.footer-branding {
+		margin-bottom: 2rem;
+
+		@include susy-media(650px) {
+			margin-bottom: 0;
+		}
+	}
+
+	a {
+		font-weight: 700;
+		color: $white;
+		&:hover {
+			text-decoration: underline;
+			color: $white;
+		}
+	}
+
+	.copyright {
+		margin-bottom: 0;
+	}
+}

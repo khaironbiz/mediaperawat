@@ -1,0 +1,354 @@
+.widget {
+	margin-bottom: 6rem;
+
+	ul {
+		@extend %reset-list;
+	}
+
+	li {
+		padding: .5rem 0;
+
+		a {
+			color: $text;
+			&:hover {
+				color: $accent;
+			}
+		}
+	}
+
+	select {
+		width: 100%;
+		max-width: 100%;
+		height: 3.6rem;
+		padding: 1rem;
+		border: .1rem solid $border-color;
+		background-color: $white;
+	}
+}
+
+.widget_categories,
+.widget_archive {
+
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	li {
+		flex-basis: 50%;
+	}
+
+}
+
+/**
+ * Footer sidebar
+ */
+.footer-sidebar {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	font-size: 1.4rem;
+
+	.widget-title {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		color: $white;
+		margin-top: 0;
+		border-bottom: 1px solid darken($border-color, 60%);
+		padding-bottom: 1rem;
+		margin-bottom: 3rem;
+
+		a {
+			color: $white;
+			text-decoration: underline;
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+
+	.widget {
+
+		li {
+
+			a {
+				color: $text-secondary;
+				&:hover {
+					color: $accent;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+.footer-column {
+
+	.widget-column-4 & {
+
+		@include susy-media(600px) {
+			width: span(6 of 12);
+		}
+
+		@include susy-media(900px) {
+			width: span(3 of 12);
+		}
+	}
+
+	.widget-column-3 & {
+		@include susy-media(600px) {
+			width: span(4 of 12);
+		}
+	}
+
+	.widget-column-6 & {
+
+		@include susy-media(600px) {
+			width: span(4 of 12);
+		}
+
+		@include susy-media(1024px) {
+			width: span(2 of 12);
+		}
+	}
+}
+
+/**
+ * Posts with Thumbnail
+ */
+.widget_entries_thumbnail,
+.elementor-widget-wp-widget-publishnow-posts {
+
+	ul {
+		@extend %reset-list;
+	}
+
+	li .cat-links {
+		display: inline-block;
+		line-height: 1;
+		font-size: 1rem;
+		a {
+			color: $accent;
+			&:hover {
+				color: $text;
+			}
+		}
+	}
+
+	.post-title {
+		display: block;
+		color: $text;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	.large-post {
+		margin-bottom: 1rem;
+
+		.post-thumbnail {
+			margin-bottom: 1rem;
+		}
+
+	}
+
+	.small-posts {
+		@extend %clearfix;
+		padding: .8rem 0;
+		clear: both;
+
+		.post-thumbnail {
+			max-width: 7rem;
+			float: left;
+		}
+
+		.post-detail {
+			margin-left: 8.5rem;
+			display: flex;
+			flex-flow: column wrap;
+
+			@include susy-media(900px) {
+				flex-flow: row wrap;
+			}
+		}
+
+		.cat-links {
+			margin-bottom: .3rem;
+		}
+
+		.post-title {
+			line-height: 2.2rem;
+		}
+
+	}
+
+}
+
+/**
+ * Social widget
+ */
+.widget_social_icons,
+.elementor-widget-wp-widget-publishnow-social {
+
+	a {
+		display: inline-block;
+		margin: .4rem .4rem .6rem .4rem;
+		width: 4.7rem;
+		height: 4.7rem;
+		position: relative;
+		text-align: center;
+		background-color: $text;
+		color: $white;
+		line-height: 4.4rem;
+		border-radius: .4rem;
+		font-size: 1.8rem;
+
+		&:hover,
+		&:visited {
+			color: $white;
+		}
+
+		&.facebook {
+			background-color: #3b5998;
+		}
+
+		&.twitter {
+			background-color: #55acee;
+		}
+
+		&.youtube {
+			background-color: #ff0000;
+		}
+
+		&.instagram {
+			background-color: #405de6;
+		}
+
+		&.pinterest {
+			background-color: #bd081c;
+		}
+
+		&.linkedin {
+			background-color: #0077b5;
+		}
+
+		&.behance {
+			background-color: #1769ff;
+		}
+
+		&.dribbble {
+			background-color: #ea4c89;
+		}
+
+		&.github {
+			background-color: #4078c0;
+		}
+
+		&.codepen {
+			background-color: #333;
+		}
+
+		&.rss {
+			background-color: #f26522;
+		}
+
+		&.tumblr {
+			background-color: #35465c;
+		}
+	}
+
+	svg {
+		vertical-align: middle;
+	}
+
+	path {
+		fill: $white;
+	}
+
+}
+
+/**
+ * Banner widget
+ */
+.widget_ad {
+	text-align: center;
+
+	.widget-title {
+		border: none;
+		color: $text-secondary;
+		background-color: transparent;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: .1rem;
+		margin-bottom: .5rem;
+		padding: 0;
+		text-align: center;
+		text-transform: uppercase;
+		display: block;
+	}
+
+}
+
+/**
+ * Address widget
+ */
+.widget_address {
+
+	ul {
+		@extend %reset-list;
+
+		.sidebar-footer & {
+			padding-left: 0;
+		}
+	}
+
+	li {
+		@extend %clearfix;
+	}
+
+	.icon {
+		width: 5%;
+		float: left;
+	}
+
+	.text {
+		width: 85%;
+		float: right;
+	}
+
+}
+
+/**
+ * Widget search
+ */
+.widget_search {
+
+	.search-field {
+		@include susy-media(max-width 900px) {
+			width: 90%;
+		}
+	}
+
+}
+
+#searchform {
+
+	button {
+		height: 4rem;
+		width: 4rem;
+		padding: 0;
+	    vertical-align: bottom;
+
+	    svg {
+	    	vertical-align: middle;
+	    }
+
+		path:nth-child(1) {
+			fill: $white;
+		}
+	}
+
+}

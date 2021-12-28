@@ -1,0 +1,91 @@
+
+---Downloaded files---
+The import files for: Demo PublishNow were successfully downloaded!
+Initial max execution time = 30
+Files info:
+Site URL = https://mediaperawat.id
+Data file = /home/mediaper/public_html/wp-content/themes/publishnow-pro/inc/demo/dummy-data.xml
+Widget file = /home/mediaper/public_html/wp-content/themes/publishnow-pro/inc/demo/widgets.wie
+Customizer file = /home/mediaper/public_html/wp-content/themes/publishnow-pro/inc/demo/customizer.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Primary Sidebar : 
+
+Image - No Title - Imported
+&raquo; Social Icons - Follow Us - Imported
+&raquo; Posts with Thumbnail - Latest News - Imported
+Categories - Categories - Imported
+
+Footer 1 : 
+
+Text - About This Theme - Imported
+
+Footer 2 : 
+
+&raquo; Social Icons - Follow Us - Imported
+
+Footer 3 : 
+
+Gallery - Gallery - Imported
+
+Footer 4 : 
+
+Categories - No Title - Imported
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---pt-ocdi/after_import---
+

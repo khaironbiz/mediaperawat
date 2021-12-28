@@ -1,0 +1,126 @@
+/*!
+PublishNow Pro Editor Styles
+*/
+@import "config";
+
+/** === Editor Frame === */
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap');
+
+body {
+
+	.wp-block[data-align="full"] {
+		width: 100%;
+	}
+
+	@media (min-width: 480px) {
+
+		.wp-block[data-align="full"] {
+			width: calc( 100% + 90px );
+			max-width: calc( 100% + 90px );
+		}
+	}
+
+	@media (min-width: 768px) {
+
+		.editor-writing-flow {
+			max-width: 80%;
+			margin: 0 10%;
+		}
+
+		.editor-post-title__block,
+		.editor-default-block-appender,
+		.editor-block-list__block {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.wp-block[data-align="wide"] {
+			width: 100%;
+		}
+
+		.wp-block[data-align="full"] {
+			position: relative;
+			left: calc( -12.5% - 14px );
+			width: calc( 125% + 116px );
+			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages.
+		}
+
+		.wp-block[data-align="right"] {
+			max-width: 125%;
+		}
+	}
+}
+
+/** === Content Width === */
+
+.wp-block {
+	width: calc(100vw - (2 * 1em));
+	max-width: 100%;
+
+	@media (min-width: 768px) {
+		width: calc(8 * (100vw / 12));
+	}
+
+	@media (min-width: 1280px) {
+		width: calc(6 * (100vw / 12 ));
+	}
+
+	// Only the top level blocks need specific widths, therefore override for every nested block.
+	.wp-block {
+		width: 100%;
+	}
+}
+
+/** === Base Typography === */
+
+body {
+	font-family: $lora;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 26px;
+	color: $text;
+}
+
+p {
+	font-size: 16px;
+}
+
+@import "base/typography";
+
+h1,
+.h1 {
+	font-size: 36px;
+	line-height: 39.6px;
+}
+
+h2,
+.h2 {
+	font-size: 30px;
+	line-height: 33px;
+}
+
+h3,
+.h3 {
+	font-size: 24px;
+	line-height: 31.2px;
+}
+
+h4,
+.h4 {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+/** === Default Appender === */
+
+.editor-default-block-appender .editor-default-block-appender__content {
+	font-size: 16px;
+	font-family: $lora;
+}
+
+.wp-block-heading {
+	strong {
+		font-weight: bold;
+	}
+}
